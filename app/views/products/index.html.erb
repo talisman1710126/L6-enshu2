@@ -5,7 +5,9 @@
       <td><%= p.name %></td>
       <td><%= p.price %>円</td>
       <td><%= link_to "削除", product_path(p), data: { turbo_method: :delete, turbo_confirm: "削除しますか？" } %></td>
+      <td><%= link_to "カート追加", new_cartitem_path(product_id: p.id) %></td>
     </tr>
   <% end %>
 </table>
-<%= link_to "商品を追加する", new_product_path %>
+<p><%= link_to "商品を追加する", new_product_path %></p>
+<p><%= link_to "カートを見る", cart_path(current_cart) %></p>
