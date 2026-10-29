@@ -24,6 +24,7 @@
   </head>
 
   <body>
+    <% flash.each do |type, msg| %><p style="color: <%= type == "notice" ? "green" : "red" %>;"><%= msg %></p><% end %>
     <%= yield %>
   </body>
 </html>

@@ -1,4 +1,11 @@
 <h1>商品登録</h1>
+<% if @product.errors.any? %>
+  <ul style="color: red;">
+    <% @product.errors.each do |error| %>
+      <li><%= error.message %></li>
+    <% end %>
+  </ul>
+<% end %>
 <%= form_with model: @product do |f| %>
   <p><%= f.label :name, "商品名" %> <%= f.text_field :name %></p>
   <p><%= f.label :price, "価格" %> <%= f.number_field :price %></p>
